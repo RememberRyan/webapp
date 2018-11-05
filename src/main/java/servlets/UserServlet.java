@@ -1,5 +1,6 @@
 package servlets;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,7 +18,12 @@ public class UserServlet extends HttpServlet {
     // doGet override used just to demonstrate writing to the server
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        PrintWriter respWriter = resp.getWriter();
-        respWriter.write("Hello from Server");
+        // request & response setup to return the userName "Karl" to the /user url server request using Java
+        String userName = "Karl";
+        req.setAttribute("userName", userName);
+
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("views/user.jsp");
+        requestDispatcher.forward(req,resp); // req and resp, two objects
+
     }
 }

@@ -11,6 +11,12 @@
     <title>User</title>
 </head>
 <body>
-<h1>Hello from user</h1>
+    <h1>Hello from user</h1>
+
+    <%--Java code gets inserted--%>
+<%
+    String userName = (String)request.getAttribute("userName");
+    out.println("<h1>Hello " + userName + "</h1>");
+%>
 </body>
 </html>
