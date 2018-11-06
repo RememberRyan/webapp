@@ -1,5 +1,7 @@
 package servlets;
 
+import model.UsersStore;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -19,6 +21,13 @@ public class AddUserServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        // collect form data
+        String userName = (String) req.getParameter("userName");
+        String password = (String) req.getParameter("password");
+
+        // stores the new data
+        UsersStore usersStore = UsersStore.getInstance();
+        usersStore.addNewUser(userName, password);
 
     }
 }
