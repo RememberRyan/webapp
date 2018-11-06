@@ -16,6 +16,11 @@
     <servlet-class>servlets.UserListServlet</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>AddUser</servlet-name>
+    <servlet-class>servlets.AddUserServlet</servlet-class>
+  </servlet>
+
   <!--This states which url will trigger it-->
   <!--<servlet-mapping>-->
     <!--<servlet-name>User</servlet-name>-->
@@ -25,6 +30,11 @@
   <servlet-mapping>
     <servlet-name>UserListServlet</servlet-name>
     <url-pattern>/list</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>AddUser</servlet-name>
+    <url-pattern>/add</url-pattern>
   </servlet-mapping>
 
 </web-app>
